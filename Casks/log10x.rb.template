@@ -3,10 +3,19 @@
 
 cask "log10x" do
   version "{{VERSION}}"
-  sha256 "{{SHA256}}"
 
-  url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}.dmg",
-      verified: "github.com/log-10x/pipeline-releases/"
+  on_arm do
+    sha256 "{{SHA256_ARM}}"
+    url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}.dmg",
+        verified: "github.com/log-10x/pipeline-releases/"
+  end
+
+  on_intel do
+    sha256 "{{SHA256_INTEL}}"
+    url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}-intel.dmg",
+        verified: "github.com/log-10x/pipeline-releases/"
+  end
+
   name "Log10x"
   desc "Observability runtime for log/trace data optimization"
   homepage "https://log10x.com/"
