@@ -2,16 +2,16 @@
 # SPDX-License-Identifier: Apache-2.0
 
 cask "log10x-cloud" do
-  version "1.0.2"
+  version "1.0.4"
 
   on_arm do
-    sha256 "dd10ebab159c32199553b45111e5812dfa8d6720e01f6458eb05c0640156a89c"
+    sha256 "e1e487d757836ec8aaedb086398811f500279faa6ef3c01c076cec6313705a0b"
     url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}.dmg",
         verified: "github.com/log-10x/pipeline-releases/"
   end
 
   on_intel do
-    sha256 "751dce24554966f895c734ed7a57902932c1cd3b3a93b72e5da02eead0f17bb5"
+    sha256 "5df43f931e7b901fe4f5bd8d8c47c4681991323a101b3c61e6086cc8110790eb"
     url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}-intel.dmg",
         verified: "github.com/log-10x/pipeline-releases/"
   end
