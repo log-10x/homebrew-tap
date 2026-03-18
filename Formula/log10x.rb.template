@@ -28,6 +28,7 @@ class Log10x < Formula
     # Install the native binary
     binary = Dir["tenx-edge-*-native"].first || Dir["tenx*"].first
     libexec.install binary => "tenx-edge"
+    chmod 0755, libexec/"tenx-edge"
 
     # Create directories
     (etc/"tenx/config").mkpath
