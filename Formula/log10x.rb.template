@@ -25,13 +25,20 @@ class Log10x < Formula
   end
 
   def install
-    # The downloaded binary name varies by architecture
+    # Install the native binary
     binary = Dir["tenx-edge-*-native"].first || Dir["tenx*"].first
-    bin.install binary => "tenx"
+    libexec.install binary => "tenx-edge"
 
-    # Create config directories
+    # Create directories
     (etc/"tenx/config").mkpath
     (etc/"tenx/symbols").mkpath
+    (lib/"tenx/modules").mkpath
+
+    # Download and install modules (pipeline spec files required by native binary)
+    system "curl", "-fsSL",
+      "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-modules-#{version}.tar.gz",
+      "-o", "#{buildpath}/tenx-modules.tar.gz"
+    system "tar", "-xzf", "#{buildpath}/tenx-modules.tar.gz", "-C", lib/"tenx/modules"
 
     # Download configuration files
     system "curl", "-fsSL",
@@ -43,6 +50,15 @@ class Log10x < Formula
     system "curl", "-fsSL",
       "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-symbols-#{version}.10x.tar",
       "-o", etc/"tenx/symbols/tenx-symbols-#{version}.10x.tar"
+
+    # Create wrapper script that sets default paths
+    (bin/"tenx").write <<~EOS
+      #!/bin/bash
+      export TENX_CONFIG="${TENX_CONFIG:-#{etc}/tenx/config}"
+      export TENX_SYMBOLS_PATH="${TENX_SYMBOLS_PATH:-#{etc}/tenx/symbols}"
+      export TENX_MODULES="${TENX_MODULES:-#{lib}/tenx/modules}"
+      exec "#{libexec}/tenx-edge" "$@"
+    EOS
   end
 
   def caveats
