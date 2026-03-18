@@ -2,11 +2,20 @@
 # SPDX-License-Identifier: Apache-2.0
 
 cask "log10x" do
-  version "1.0.1"
-  sha256 "0430cffa97ec4290dfcb3b8799a6ac1132268edb5d0056c1d6787b1f71c95891"
+  version "1.0.2"
 
-  url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}.dmg",
-      verified: "github.com/log-10x/pipeline-releases/"
+  on_arm do
+    sha256 "dd10ebab159c32199553b45111e5812dfa8d6720e01f6458eb05c0640156a89c"
+    url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}.dmg",
+        verified: "github.com/log-10x/pipeline-releases/"
+  end
+
+  on_intel do
+    sha256 "751dce24554966f895c734ed7a57902932c1cd3b3a93b72e5da02eead0f17bb5"
+    url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}-intel.dmg",
+        verified: "github.com/log-10x/pipeline-releases/"
+  end
+
   name "Log10x"
   desc "Observability runtime for log/trace data optimization"
   homepage "https://log10x.com/"
