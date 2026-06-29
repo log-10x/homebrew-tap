@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Homebrew formulae and casks for [Log10x](https://doc.log10x.com).
+Homebrew formulae and casks for [Log10x](https://www.log10x.com/?utm_source=github&utm_medium=readme&utm_campaign=homebrew-tap&utm_content=hero).
 
 ## Install
 
