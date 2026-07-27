@@ -1,6 +1,6 @@
 # Log10x Homebrew Tap
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Homebrew formulae and casks for [Log10x](https://www.log10x.com/?utm_source=github&utm_medium=readme&utm_campaign=homebrew-tap&utm_content=hero).
 
@@ -42,7 +42,7 @@ brew uninstall --cask log10x-cloud
 
 ## License
 
-This repository is licensed under the [Apache License 2.0](LICENSE).
+This repository is licensed under the [MIT License](LICENSE).
 
 ### Important: Log10x Product License Required
 
@@ -51,7 +51,7 @@ formulae and casks themselves are open source, **using Log10x requires a commerc
 
 | Component | License |
 |-----------|---------|
-| This repository (Homebrew formulae and casks) | Apache 2.0 (open source) |
+| This repository (Homebrew formulae and casks) | MIT (open source) |
 | Log10x engine and runtime | Commercial license required |
 
 **What this means:**
