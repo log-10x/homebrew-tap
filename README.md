@@ -7,10 +7,10 @@ Homebrew formulae and casks for [Log10x](https://www.log10x.com/?utm_source=gith
 ## Install
 
 ```sh
-# Edge flavor: native CLI binary
+# runtime flavor: native CLI binary
 brew install log-10x/tap/log10x
 
-# Cloud flavor: full macOS app with bundled JRE (required for symbol compilation)
+# compiler flavor: full macOS app with bundled JRE (required for symbol compilation)
 brew install --cask log-10x/tap/log10x-cloud
 ```
 
@@ -20,10 +20,19 @@ Both install the `tenx` command on your PATH.
 
 | Name | Type | Flavor | Contents |
 |------|------|--------|----------|
-| `log10x` | Formula | [Edge](https://doc.log10x.com/engine/flavors/#edge) | `tenx-edge` native binary, pipeline modules, configuration, symbol libraries |
-| `log10x-cloud` | Cask | [Cloud](https://doc.log10x.com/engine/flavors/#cloud) | `tenx-cloud.app` (bundled JRE), configuration, symbol libraries |
+| `log10x` | Formula | runtime | `tenx-edge` native binary, pipeline modules, configuration, symbol libraries |
+| `log10x-cloud` | Cask | compiler | `tenx-cloud.app` (bundled JRE), configuration, symbol libraries |
 
-Pick **`log10x`** to run edge apps (Dev, Reporter, Receiver). Pick **`log10x-cloud`** to also run the Compiler and cloud apps.
+Pick **`log10x`** to run the Reporter, Receiver, Retriever, MCP server and CLI. Pick **`log10x-cloud`** to also run `generate`, compile and link.
+
+The names on the left keep the old flavor words, and so do the `tenx-edge` /
+`tenx-cloud` names on disk. Cask tokens, formula file names and release-asset
+URLs are names rather than flag values: Homebrew ties a cask token to its file
+name, and log-10x/engine's release job rewrites both files by exact path on
+every release. See
+[FLAVORS.md](https://github.com/log-10x/pipeline-releases/blob/main/FLAVORS.md)
+for the full mapping and for what would have to change in lockstep to rename
+them.
 
 ## Update
 

@@ -1,5 +1,23 @@
 # Copyright 2025-2026 Log10x, Inc.
 # SPDX-License-Identifier: Apache-2.0
+#
+# This cask installs the COMPILER flavor: the JVM build, which can run
+# `generate`, compile and link in addition to everything the runtime does.
+#
+# The token stays `log10x-cloud` and the URLs stay `tenx-cloud-*.dmg` even
+# though the flavor is now called "compiler". Three things pin those strings:
+#
+#   1. Homebrew requires the cask token to equal the file name, and
+#      log-10x/engine's release job writes this exact path:
+#        sed ... Casks/log10x-cloud.rb.template > Casks/log10x-cloud.rb
+#      Renaming the file makes that sed fail and the release job fail with it.
+#   2. The DMG names are set by the engine build, and every published release
+#      from 1.0.x on carries tenx-cloud-<version>.dmg.
+#   3. Renaming a cask token orphans existing installs unless the rename is
+#      staged through `old_name`, which is a separate change with its own
+#      upgrade path.
+#
+# See https://github.com/log-10x/pipeline-releases/blob/main/FLAVORS.md
 
 cask "log10x-cloud" do
   version "{{VERSION}}"
