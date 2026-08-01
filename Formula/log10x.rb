@@ -4,19 +4,19 @@
 class Log10x < Formula
   desc "Observability runtime for log/trace data optimization"
   homepage "https://log10x.com/"
-  version "1.1.32"
+  version "1.1.37"
   license :cannot_represent
 
   on_arm do
-    url "https://github.com/log-10x/pipeline-releases/releases/download/1.1.32/tenx-edge-1.1.32-macos-arm64-native",
+    url "https://github.com/log-10x/pipeline-releases/releases/download/1.1.37/tenx-edge-1.1.37-macos-arm64-native",
         verified: "github.com/log-10x/pipeline-releases/"
-    sha256 "7b2bc54bdf72fd6e3bb2539db1ade582c10c9aabff6b81134405cc8bdfcea799"
+    sha256 "8aff99ae37141e9e7de02ff1f4be66ba651a9c7e3b08d68c7a93fa853309db34"
   end
 
   on_intel do
-    url "https://github.com/log-10x/pipeline-releases/releases/download/1.1.32/tenx-edge-1.1.32-macos-amd64-native",
+    url "https://github.com/log-10x/pipeline-releases/releases/download/1.1.37/tenx-edge-1.1.37-macos-amd64-native",
         verified: "github.com/log-10x/pipeline-releases/"
-    sha256 "48562bc7ea2eb4b663f8ee1a485a87a23ff6e3fe959829456f655764e763b16d"
+    sha256 "45a39814970df0ef5fe8a7ce89e6413c1d2b62b500c2da53105291964cdf429c"
   end
 
   livecheck do
