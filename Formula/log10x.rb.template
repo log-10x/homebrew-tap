@@ -1,5 +1,16 @@
 # Copyright 2025-2026 Log10x, Inc.
 # SPDX-License-Identifier: Apache-2.0
+#
+# This formula installs the RUNTIME flavor: the GraalVM native binary that
+# runs the Reporter, Receiver, Retriever, MCP server and CLI.
+#
+# The download URLs and the `tenx-edge` name on disk stay as they are even
+# though the flavor is now called "runtime". They are release-asset names, not
+# flag values: every published release carries tenx-edge-<v>-macos-<arch>-native,
+# and log-10x/engine's release job finds them with exactly those patterns before
+# writing this file from its template.
+#
+# See https://github.com/log-10x/pipeline-releases/blob/main/FLAVORS.md
 
 class Log10x < Formula
   desc "Observability runtime for log/trace data optimization"
