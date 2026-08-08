@@ -20,16 +20,16 @@
 # See https://github.com/log-10x/pipeline-releases/blob/main/FLAVORS.md
 
 cask "log10x-cloud" do
-  version "1.1.50"
+  version "1.1.51"
 
   on_arm do
-    sha256 "e0eea1b2435a0b7ea27f069339cbb5726eeee5d9c8d21991f878b661649cca99"
+    sha256 "900479fcfd1234d8a81ababed3b0002bafa08b61752a20313cd69a7f7a793d23"
     url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}.dmg",
         verified: "github.com/log-10x/pipeline-releases/"
   end
 
   on_intel do
-    sha256 "28dbcdaca9973cc6aa0289872e44c2046c9a21370c7ee92bebe59bf11f9c80be"
+    sha256 "f78354398dc441b4dd6f4ba9eb2be6f4dc6ede2516b31b7f251ccfed2736eb31"
     url "https://github.com/log-10x/pipeline-releases/releases/download/#{version}/tenx-cloud-#{version}-intel.dmg",
         verified: "github.com/log-10x/pipeline-releases/"
   end
